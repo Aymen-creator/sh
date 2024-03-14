@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add News</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add.css' %}">
+</head>
+<body>
+    <div class="whole">
+        <div class="error">
+    {% if sucess == "True" %}
+        <script>
+            window.alert("Uploaded The File Sucessfuly!");
+        </script>
+    {% elif sucess == "False" %}
+        <script>
+            window.alert("Faileled to Upload the File!");
+        </script>
+        <p>Sorry We have got an error because of {{error}}</p>
+    {% endif %}
+    </div>
+<div class="wh">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p>Write The Title for the news here</p>
+        <textarea name = "title_news" rows="2" cols="50" placeholder=""></textarea>
+
+        <p>Write the Full news here!</p>
+        <textarea name = "full_news" rows="10" cols="100" placeholder=""></textarea>
+        
+        <p> Please Select One its a must</p>
+        <div class="in1">
+            <div class="in11">
+        <input type="checkbox" name="trending" value="on" id="check1"><label for="check1">Trending News</label><br><br><br>
+        </div>
+        <div class="in112">
+        <input type="checkbox" name="hot" value="on" id="check2"><label for="check2">Hot News</label><br><br><br>
+        </div>
+        </div>
+        <div class="in2">
+            <div class="in22">
+        <input type="checkbox" name="latest" value="on" id="check3"><label for="check3">Latest News</label><br><br><br>
+        </div>
+        <div class="in222">
+        <input type="checkbox" name="normal" value="on" id="check4"><label for="check4">Normal News (Other news)</label><br><br><br>
+        </div>
+</div>
+        <h1>Please Select a photo to upload</h1>
+       <div class="input">
+        <div class="input1">
+        <input type="file" name="image" class="file">
+        </div>
+        <div class="accept">
+        <button type="submit">Add News</button>
+        </div>
+        </div>
+        <br><br><br>
+    </form> 
+    </div>  
+    </div>
+</body>
+</html>

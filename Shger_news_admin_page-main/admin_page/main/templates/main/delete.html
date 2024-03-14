@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete News</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'd.css' %}">
+</head>
+<body>
+    <form action = "#" method="post">
+        <div class="all">
+        {% csrf_token %}
+        {% for item in arr %}
+            <input type="checkbox" name="{{item.0}}" value="habibi">
+            <h2>{{item.1}}</h2>
+            <p>{{item.2}}</p>
+        {% endfor %}
+</div>
+        <button type="submit">Delete</button>
+    </form>
+    
+</body>
+</html>

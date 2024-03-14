@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url(img/clo.jpg);
+    background-size: cover;
+}
+.whole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a button {
+    color: white;
+}
+button:hover {
+    cursor: pointer;
+    background: #A020F0;
+}
+button {
+    padding: 8px;
+    margin: 30px;
+    width: 200px;
+    border: solid 2px white;
+    border-radius: 20px;
+    background: transparent;
+    margin-top: 300px;
+    transition: .6s;
+}

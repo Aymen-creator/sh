@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login.css' %}">
+    </head>
+    <body>
+        {% if error == "error" %}
+            <h3>The email or the password is incorrect</h3>
+            <script>
+                window.alert("Wrong crendentials Nigga!");
+            </script>
+        {% endif %}
+        <div class="whole">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <h1>Login</h1>               
+                <div class="user">
+                    <input type="text" placeholder="Email" name = "email" required>
+                </div>
+                <div class="user">
+                    <input type="password" placeholder="password"  name = "password" required>
+                </div>
+                <button type="submit" value="Login" class="btn">Login</button>
+            </form>
+        </div>
+    </body>
+</html>
